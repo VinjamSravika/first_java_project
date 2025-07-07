@@ -46,7 +46,6 @@ public class RuleService {
         return ruleRepository.save(rule);
     }
 
-    // The evaluate method called by your controller
     public EvaluationResult evaluate(Map<String, Object> input) {
         List<Rule> rules = ruleRepository.findAll();
 
@@ -67,7 +66,6 @@ public class RuleService {
         return new EvaluationResult("flag");
     }
 
-    // Helper method to evaluate condition using JavaScript engine
     private boolean evaluateCondition(String condition, Map<String, Object> variables) {
         try {
             JexlEngine jexl = new JexlBuilder().create();
@@ -84,14 +82,13 @@ public class RuleService {
         }
     }
 
-    // Flatten nested JSON map to single-level map with dot notation keys
     private Map<String, Object> flattenJson(Map<String, Object> input) {
         Map<String, Object> result = new HashMap<>();
         flatten("", input, result);
         return result;
     }
 
-    @SuppressWarnings("unchecked")
+
     private void flatten(String prefix, Map<String, Object> map, Map<String, Object> result) {
         for (Map.Entry<String, Object> entry : map.entrySet()) {
             String key = prefix.isEmpty() ? entry.getKey() : prefix + "." + entry.getKey();
