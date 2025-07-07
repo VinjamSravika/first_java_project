@@ -6,7 +6,7 @@ public class TradingRule {
     private String action;
 
     public TradingRule() {
-        // Needed for deserialization
+
     }
 
     public TradingRule(String symbol, double triggerPrice, String action) {
