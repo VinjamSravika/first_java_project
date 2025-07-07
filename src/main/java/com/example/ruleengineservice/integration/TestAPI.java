@@ -8,11 +8,9 @@ package com.example.ruleengineservice.integration;
 public class TestAPI {
     public static void main(String[] args) {
         List<TradingRule> rules = new ArrayList<>();
-
-        // Add different stock trading rules
         rules.add(new TradingRule("AAPL", 210.0, "BUY"));
         rules.add(new TradingRule("MSFT", 600.0, "BUY"));
-        rules.add(new TradingRule("AAPL", 220.0, "SELL")); // Apple sell if > 220
+        rules.add(new TradingRule("AAPL", 220.0, "SELL"));
 
         for (TradingRule rule : rules) {
             String response = TwelveDataAPIClient.getStockQuote(rule.getSymbol());
