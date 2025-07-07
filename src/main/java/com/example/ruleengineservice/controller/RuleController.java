@@ -24,10 +24,6 @@ public class RuleController {
         return rules;
     }
 
-    /* @PostMapping
-     public void createRule(@RequestBody TradingRule rule) {
-         rules.add(rule);
-     }*/
     @PostMapping
     public void createRule(@RequestBody TradingRule rule) {
         if (rule.getSymbol() == null || rule.getAction() == null || rule.getTriggerPrice() <= 0) {
@@ -35,7 +31,6 @@ public class RuleController {
         }
         rules.add(rule);
     }
-    // ✅ Add this import
 
     @PostMapping("/evaluate")
     public EvaluationResult evaluate(@RequestBody Map<String, Object> request) {
@@ -56,8 +51,6 @@ public class RuleController {
                 }
             }
         }
-
-        // ✅ Return cleaner NO_ACTION result
         return new EvaluationResult(
                 symbol,
                 price,
