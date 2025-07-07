@@ -7,7 +7,6 @@ public class EvaluationResult {
     private String symbol;
     private boolean matched;
 
-    // ✅ Full constructor (used in dashboard)
     public EvaluationResult(String symbol, double currentPrice, double triggerPrice, String action, boolean matched) {
         this.symbol = symbol;
         this.currentPrice = currentPrice;
@@ -16,12 +15,11 @@ public class EvaluationResult {
         this.matched = matched;
     }
 
-    // ✅ Simple constructor (used in Week 2)
+
     public EvaluationResult(String action) {
         this.action = action;
     }
 
-    // ✅ Getters and setters
     public String getAction() {
         return action;
     }
