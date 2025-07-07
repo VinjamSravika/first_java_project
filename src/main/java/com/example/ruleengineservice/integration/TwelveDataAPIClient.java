@@ -4,11 +4,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class TwelveDataAPIClient {  // <- class starts here
+public class TwelveDataAPIClient {
 
-    private static final String API_KEY = "31fc3e619ba444929c531ad509f7556b";  // Replace with your API key
+    private static final String API_KEY = "31fc3e619ba444929c531ad509f7556b";
 
-    public static String getStockQuote(String symbol) {  // method inside the class
+    public static String getStockQuote(String symbol) {
         String response = "";
         try {
             String urlString = "https://api.twelvedata.com/quote?symbol=" + symbol + "&apikey=" + API_KEY;
@@ -31,4 +31,4 @@ public class TwelveDataAPIClient {  // <- class starts here
         }
         return response;
     }
-}  // <- class ends here
+}
