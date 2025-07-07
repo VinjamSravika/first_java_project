@@ -8,7 +8,6 @@ public class TradingRule {
     public TradingRule() {
 
     }
-
     public TradingRule(String symbol, double triggerPrice, String action) {
         this.symbol = symbol;
         this.triggerPrice = triggerPrice;
